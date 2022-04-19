@@ -7,7 +7,7 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
     <bean id="musicBean" class="com.example.musicplayer.ClassicMusic">
     </bean>
-    <bean id="musicPlayer1" class="com.example.musicplayer.MusicPlayer">
+    <bean id="musicPlayer1" class="com.example.musicplayer.MusicPlayer" scope="prototype">
         <property name="music" ref="musicBean"/>
 <!--        Использование прямой связи через Spring-->
 <!--        <property name="playerName" value="Первый плаер"/>-->

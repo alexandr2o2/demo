@@ -8,7 +8,9 @@ public class Main {
                 "applicationContext.xml"
         );
         MusicPlayer musicPlayer = c.getBean("musicPlayer1", MusicPlayer.class);
+        MusicPlayer musicPlayer1 = c.getBean("musicPlayer1", MusicPlayer.class);
         musicPlayer.playMusic();
+        System.out.println(musicPlayer1 == musicPlayer);
         System.out.println("Громкость: " + musicPlayer.getVol());
         System.out.println("Название плеера: " + musicPlayer.getPlayerName());
         c.close();
