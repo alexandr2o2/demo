@@ -1,5 +1,8 @@
 package com.example.musicplayer;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MusicPlayer {
     private Music music;
     private int vol = 100;

@@ -4,17 +4,19 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
-    <bean id="musicBean" class="com.example.musicplayer.ClassicMusic">
+<!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
+        <context:component-scan base-package="com.example"/>
+<!--    Убираем лишний XML код-->
+    <!--<bean id="musicBean" class="com.example.musicplayer.ClassicMusic">
     </bean>
     <bean id="musicPlayer1" class="com.example.musicplayer.MusicPlayer" scope="prototype">
         <property name="music" ref="musicBean"/>
-<!--        Использование прямой связи через Spring-->
-<!--        <property name="playerName" value="Первый плаер"/>-->
-<!--        <property name="vol" value="50"/>-->
-        <!--        Получение данных из файла свойств-->
+&lt;!&ndash;        Использование прямой связи через Spring&ndash;&gt;
+&lt;!&ndash;        <property name="playerName" value="Первый плаер"/>&ndash;&gt;
+&lt;!&ndash;        <property name="vol" value="50"/>&ndash;&gt;
+        &lt;!&ndash;        Получение данных из файла свойств&ndash;&gt;
 
         <property name="playerName" value="${musicPlayer.name}"/>
         <property name="vol" value="${musicPlayer.volume}"/>
-    </bean>
+    </bean>-->
 </beans>

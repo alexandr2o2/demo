@@ -7,12 +7,11 @@ public class Main {
         ClassPathXmlApplicationContext c = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
-        MusicPlayer musicPlayer = c.getBean("musicPlayer1", MusicPlayer.class);
-        MusicPlayer musicPlayer1 = c.getBean("musicPlayer1", MusicPlayer.class);
+        MusicPlayer musicPlayer = c.getBean("musicPlayer", MusicPlayer.class);
+        Music music = c.getBean("someClassicalMusic", ClassicMusic.class);
+        musicPlayer.setMusic(music);
         musicPlayer.playMusic();
-        System.out.println(musicPlayer1 == musicPlayer);
-        System.out.println("Громкость: " + musicPlayer.getVol());
-        System.out.println("Название плеера: " + musicPlayer.getPlayerName());
+        System.out.println(music.getDescription());
         c.close();
     }
 }
